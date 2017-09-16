@@ -25,6 +25,8 @@ public class DatabaseTesterApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        dbTesterApplication = DatabaseTesterApplication.this;
+
         // Stetho must be used in DEBUG build only. However this is not production app.
         Stetho.initialize(
                 Stetho.newInitializerBuilder(this)

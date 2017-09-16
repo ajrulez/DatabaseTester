@@ -3,6 +3,7 @@ package com.kamalan.databasetester.model;
 import com.google.gson.GsonBuilder;
 
 import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Id;
 
 /**
  * Created by alifesoftware on 9/16/17.
@@ -13,7 +14,9 @@ import io.objectbox.annotation.Entity;
 
 @Entity
 public class BookingObjectBox {
-    private String id;
+    @Id (assignable = true)
+    private long id;
+    private String bookingId;
     private String phoneNumber;
     private String code;
     private String taxiTypeId;
@@ -27,12 +30,20 @@ public class BookingObjectBox {
         return new GsonBuilder().create().toJson(this, Booking.class);
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(String bookingId) {
+        this.bookingId = bookingId;
     }
 
     public String getPhoneNumber() {

@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.kamalan.databasetester.model.Booking;
 import com.kamalan.databasetester.model.BookingObjectBox;
+import com.kamalan.databasetester.model.BookingObjectBox_;
 import com.kamalan.databasetester.realm.MyRealmDB;
 import com.kamalan.databasetester.snappy.MySnappyDB;
 
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < size; i++) {
             BookingObjectBox booking = new BookingObjectBox();
-            booking.setId(UUID.randomUUID().toString());
+            booking.setBookingId(UUID.randomUUID().toString());
             booking.setCode(UUID.randomUUID().toString());
             booking.setFareLowerBound(rand.nextFloat());
             booking.setFareUpperBound(rand.nextFloat());
@@ -216,12 +217,12 @@ public class MainActivity extends AppCompatActivity {
         long startTime = System.currentTimeMillis();
 
         Box<BookingObjectBox> bookingBox = mObjectBox.boxFor(BookingObjectBox.class);
-        long id = Long.valueOf(mEditText.getText().toString().trim());
-        //List<BookingObjectBox> bookings = bookingBox.query().equal(.coinSymbol, coinSymbol).build().find();
+        String bookingId = mEditText.getText().toString().trim();
+        List<BookingObjectBox> bookings = bookingBox.query().equal(BookingObjectBox_.bookingId, bookingId).build().find();
 
         long processTime = System.currentTimeMillis();
         processTime -= startTime;
-        //printMessage("> Number of " + bookings.size() + " Booking(s) found in ObjectBox db in " + processTime + "ms");
+        printMessage("> Number of " + bookings.size() + " Booking(s) found in ObjectBox db in " + processTime + "ms");
     }
 
     private void realmDelete() {
