@@ -1,0 +1,64 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:7048988179173340877",
+      "lastPropertyId": "10:1920060641832564063",
+      "name": "BookingObjectBox",
+      "properties": [
+        {
+          "id": "2:7675638405622206849",
+          "name": "id"
+        },
+        {
+          "id": "3:7264239038686325459",
+          "name": "phoneNumber"
+        },
+        {
+          "id": "4:4925865221255949950",
+          "name": "code"
+        },
+        {
+          "id": "5:1628143114338488291",
+          "name": "taxiTypeId"
+        },
+        {
+          "id": "6:2994065421478352834",
+          "name": "requestedTaxiTypeName"
+        },
+        {
+          "id": "7:5836457999604172315",
+          "name": "pickUpTime"
+        },
+        {
+          "id": "8:6769374045086838858",
+          "name": "fareLowerBound"
+        },
+        {
+          "id": "9:941592239610474063",
+          "name": "fareUpperBound"
+        },
+        {
+          "id": "10:1920060641832564063",
+          "name": "bookingId"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:7048988179173340877",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    831352385261190370
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
